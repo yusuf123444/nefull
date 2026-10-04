@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Контакты — CRAVECRAFT</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .modal {
+            animation: modalOpen .22s ease;
+        }
+
+        @keyframes modalOpen {
+
+            from {
+                opacity: 0;
+                transform: scale(.94) translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+
+        }
+
+        .dynamic-wrapper {
+            overflow: hidden;
+            position: relative;
+            transition: height .35s ease;
+        }
+
+        .dynamic-text {
+            cursor: pointer;
+            transition:
+                transform .55s ease,
+                opacity .55s ease;
+            will-change: transform, opacity;
+        }
+
+        .dynamic-text:hover {
+            opacity: .8;
+        }
+
+    </style>
+
+</head>
+
+
+<body class="bg-[#f7f7f6] text-[#151923]">
+
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <header
+        class="sticky top-0 z-50 h-[100px] border-b border-black/10 bg-white/95 backdrop-blur-xl">
+
+        <div
+            class="mx-auto flex h-full max-w-[1450px] items-center justify-between px-8">
+
+            <a
+                href="index.html"
+                class="text-[24px] font-black tracking-tight">
+
+                CRAVE<span class="text-orange-500">CRAFT</span>
+
+            </a>
+
+
+            <nav class="hidden items-center gap-9 md:flex">
+
+                <a
+                    href="index.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    Главная
+
+                </a>
+
+
+                <a
+                    href="menu.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    Меню
+
+                </a>
+
+
+                <a
+                    href="services.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    Сервисы
+
+                </a>
+
+
+                <a
+                    href="about.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    О нас
+
+                </a>
+
+
+                <a
+                    href="contacts.html"
+                    class="font-bold text-orange-500">
+
+                    Контакты
+
+                </a>
+
+            </nav>
+
+
+            <button
+                onclick="openModal('loginModal')"
+                class="rounded-xl bg-orange-500 px-6 py-3 text-sm font-black text-white transition hover:scale-105 hover:bg-orange-600">
+
+                Войти
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================================================= -->
+    <!-- HERO -->
+    <!-- ================================================= -->
+
+    <section
+        class="min-h-[100vh] bg-[#f7f7f6] px-5 py-24">
+
+        <div
+            class="mx-auto max-w-[1450px]">
+
+
+            <!-- TITLE -->
+
+            <div class="text-center">
+
+                <span
+                    class="inline-block rounded-full bg-orange-50 px-5 py-2 text-[12px] font-black uppercase tracking-wider text-orange-500">
+
+                    Связаться с нами
+
+                </span>
+
+
+                <!-- DYNAMIC TITLE -->
+
+                <div
+                    id="contactTitleWrapper"
+                    class="dynamic-wrapper mx-auto mt-6 max-w-[900px]">
+
+                    <h1
+                        id="contactTitle"
+                        onclick="changeContactTitle()"
+                        class="dynamic-text text-[48px] font-black leading-none tracking-[-2px] md:text-[65px]">
+
+                        Мы всегда
+
+                        <span class="text-orange-500">
+                            на связи
+                        </span>
+
+                    </h1>
+
+                </div>
+
+
+                <p
+                    class="mx-auto mt-6 max-w-[650px] text-[15px] leading-6 text-gray-500">
+
+                    Есть вопросы по заказу, доставке или работе
+                    CRAVECRAFT? Напишите нам или приходите
+                    в один из наших ресторанов.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- CONTACT CARDS -->
+
+            <div
+                class="mt-14 grid gap-5 md:grid-cols-3">
+
+
+                <!-- ADDRESS -->
+
+                <div
+                    class="rounded-[22px] border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-50 text-[25px]">
+
+                        📍
+
+                    </div>
+
+
+                    <p
+                        class="mt-6 text-[12px] font-black uppercase tracking-wider text-gray-400">
+
+                        Наш адрес
+
+                    </p>
+
+
+                    <h2
+                        class="mt-2 text-[20px] font-black">
+
+                        Главный ресторан
+
+                    </h2>
+
+
+                    <p
+                        class="mt-3 text-[14px] leading-6 text-gray-500">
+
+                        г. Ташкент,
+
+                        <br>
+
+                        ул. Амир Темур, 15
+
+                    </p>
+
+
+                    <button
+                        onclick="showMap()"
+                        class="mt-6 text-[13px] font-bold text-orange-500 hover:text-orange-600">
+
+                        Открыть на карте →
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- PHONE -->
+
+                <div
+                    class="rounded-[22px] border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-50 text-[25px]">
+
+                        📞
+
+                    </div>
+
+
+                    <p
+                        class="mt-6 text-[12px] font-black uppercase tracking-wider text-gray-400">
+
+                        Телефон
+
+                    </p>
+
+
+                    <h2
+                        class="mt-2 text-[20px] font-black">
+
+                        Служба поддержки
+
+                    </h2>
+
+
+                    <p
+                        class="mt-3 text-[14px] leading-6 text-gray-500">
+
+                        +998 71 555 35 37
+
+                        <br>
+
+                        +998 90 555 35 37
+
+                    </p>
+
+
+                    <a
+                        href="tel:+998715553537"
+                        class="mt-6 inline-block text-[13px] font-bold text-orange-500">
+
+                        Позвонить →
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div
+                    class="rounded-[22px] border border-gray-200 bg-white p-7 shadow-sm transition hover:-translate-y-2 hover:shadow-xl">
+
+                    <div
+                        class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[25px]">
+
+                        ✉️
+
+                    </div>
+
+
+                    <p
+                        class="mt-6 text-[12px] font-black uppercase tracking-wider text-gray-400">
+
+                        Email
+
+                    </p>
+
+
+                    <h2
+                        class="mt-2 text-[20px] font-black">
+
+                        Электронная почта
+
+                    </h2>
+
+
+                    <p
+                        class="mt-3 text-[14px] leading-6 text-gray-500">
+
+                        hello@cravecraft.uz
+
+                        <br>
+
+                        support@cravecraft.uz
+
+                    </p>
+
+
+                    <a
+                        href="mailto:hello@cravecraft.uz"
+                        class="mt-6 inline-block text-[13px] font-bold text-orange-500">
+
+                        Написать нам →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM + MAP -->
+
+            <div
+                class="mt-6 grid gap-6 lg:grid-cols-2">
+
+
+                <!-- FORM -->
+
+                <div
+                    class="rounded-[25px] border border-gray-200 bg-white p-8 shadow-sm md:p-10">
+
+                    <div>
+
+                        <span
+                            class="text-[12px] font-black uppercase tracking-wider text-orange-500">
+
+                            Напишите нам
+
+                        </span>
+
+
+                        <h2
+                            class="mt-3 text-[30px] font-black">
+
+                            Остались вопросы?
+
+                        </h2>
+
+
+                        <p
+                            class="mt-3 text-[14px] leading-6 text-gray-400">
+
+                            Заполните форму и наша команда
+                            свяжется с вами.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <form
+                        onsubmit="sendMessage(event)"
+                        class="mt-8">
+
+
+                        <div
+                            class="grid gap-4 md:grid-cols-2">
+
+
+                            <div>
+
+                                <label
+                                    class="text-[13px] font-bold">
+
+                                    Ваше имя
+
+                                </label>
+
+
+                                <input
+                                    required
+                                    type="text"
+                                    placeholder="Например, Юсуф"
+                                    class="mt-2 h-[52px] w-full rounded-xl border border-gray-200 bg-[#fafafa] px-4 text-[14px] outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10">
+
+                            </div>
+
+
+
+                            <div>
+
+                                <label
+                                    class="text-[13px] font-bold">
+
+                                    Телефон
+
+                                </label>
+
+
+                                <input
+                                    required
+                                    type="tel"
+                                    placeholder="+998 90 000 00 00"
+                                    class="mt-2 h-[52px] w-full rounded-xl border border-gray-200 bg-[#fafafa] px-4 text-[14px] outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10">
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="mt-5">
+
+                            <label
+                                class="text-[13px] font-bold">
+
+                                Email
+
+                            </label>
+
+
+                            <input
+                                required
+                                type="email"
+                                placeholder="your@gmail.com"
+                                class="mt-2 h-[52px] w-full rounded-xl border border-gray-200 bg-[#fafafa] px-4 text-[14px] outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10">
+
+                        </div>
+
+
+
+                        <div class="mt-5">
+
+                            <label
+                                class="text-[13px] font-bold">
+
+                                Тема сообщения
+
+                            </label>
+
+
+                            <select
+                                class="mt-2 h-[52px] w-full rounded-xl border border-gray-200 bg-[#fafafa] px-4 text-[14px] outline-none focus:border-orange-500">
+
+                                <option>
+                                    Вопрос по заказу
+                                </option>
+
+                                <option>
+                                    Доставка
+                                </option>
+
+                                <option>
+                                    Качество еды
+                                </option>
+
+                                <option>
+                                    Партнёрство
+                                </option>
+
+                                <option>
+                                    Работа в CRAVECRAFT
+                                </option>
+
+                                <option>
+                                    Другое
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="mt-5">
+
+                            <label
+                                class="text-[13px] font-bold">
+
+                                Сообщение
+
+                            </label>
+
+
+                            <textarea
+                                required
+                                placeholder="Напишите ваше сообщение..."
+                                class="mt-2 h-[130px] w-full resize-none rounded-xl border border-gray-200 bg-[#fafafa] p-4 text-[14px] outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10"></textarea>
+
+                        </div>
+
+
+
+                        <label
+                            class="mt-5 flex cursor-pointer items-center gap-3 text-[12px] text-gray-400">
+
+                            <input
+                                required
+                                type="checkbox"
+                                class="h-4 w-4 accent-orange-500">
+
+                            <span>
+                                Я согласен с обработкой персональных данных
+                            </span>
+
+                        </label>
+
+
+
+                        <button
+                            type="submit"
+                            class="mt-6 w-full rounded-xl bg-orange-500 py-4 text-[14px] font-black text-white transition hover:bg-orange-600 hover:shadow-[0_10px_30px_rgba(255,105,0,.2)]">
+
+                            Отправить сообщение →
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- MAP -->
+
+                <div
+                    class="relative min-h-[600px] overflow-hidden rounded-[25px] bg-[#242424]">
+
+
+                    <div
+                        class="absolute inset-0 opacity-60">
+
+                        <div
+                            class="absolute left-[10%] top-[20%] h-[2px] w-[90%] rotate-[18deg] bg-white/10">
+                        </div>
+
+                        <div
+                            class="absolute left-[-10%] top-[45%] h-[3px] w-[120%] rotate-[-12deg] bg-white/10">
+                        </div>
+
+                        <div
+                            class="absolute left-[20%] top-[65%] h-[2px] w-[100%] rotate-[25deg] bg-white/10">
+                        </div>
+
+                        <div
+                            class="absolute left-[45%] top-[-10%] h-[120%] w-[3px] rotate-[20deg] bg-white/10">
+                        </div>
+
+                        <div
+                            class="absolute left-[70%] top-[-10%] h-[120%] w-[2px] rotate-[-25deg] bg-white/10">
+                        </div>
+
+                        <div
+                            class="absolute left-[25%] top-[10%] h-[300px] w-[300px] rounded-full border border-white/10">
+                        </div>
+
+                        <div
+                            class="absolute right-[10%] bottom-[15%] h-[250px] w-[250px] rounded-full border border-white/10">
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="absolute left-6 top-6 rounded-xl bg-white px-5 py-3 shadow-xl">
+
+                        <p
+                            class="text-[11px] font-black uppercase text-gray-400">
+
+                            CRAVECRAFT
+
+                        </p>
+
+
+                        <p
+                            class="mt-1 text-[13px] font-bold">
+
+                            Ташкент
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div
+                        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+
+                        <div
+                            class="flex h-[75px] w-[75px] items-center justify-center rounded-full bg-orange-500 shadow-[0_0_50px_rgba(255,105,0,.5)]">
+
+                            <span class="text-[30px]">
+                                📍
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="mx-auto mt-3 w-max rounded-xl bg-white px-5 py-3 text-center shadow-xl">
+
+                            <p class="text-[13px] font-black">
+                                CRAVECRAFT
+                            </p>
+
+                            <p class="mt-1 text-[11px] text-gray-400">
+                                Амир Темур, 15
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="absolute bottom-5 left-5 right-5 rounded-2xl bg-black/70 p-5 text-white backdrop-blur-xl">
+
+                        <div
+                            class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+
+                            <div>
+
+                                <p
+                                    class="text-[11px] font-bold text-orange-400">
+
+                                    ГЛАВНЫЙ РЕСТОРАН
+
+                                </p>
+
+
+                                <p
+                                    class="mt-1 text-[14px] font-bold">
+
+                                    ул. Амир Темур, 15
+
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                onclick="showMap()"
+                                class="rounded-xl bg-orange-500 px-5 py-3 text-[12px] font-bold">
+
+                                Построить маршрут
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- WORKING HOURS -->
+    <!-- ================================================= -->
+
+    <section
+        class="min-h-[70vh] bg-white px-5 py-24">
+
+        <div
+            class="mx-auto max-w-[1450px]">
+
+
+            <div class="text-center">
+
+                <span
+                    class="rounded-full bg-orange-50 px-4 py-2 text-[12px] font-black uppercase text-orange-500">
+
+                    Мы работаем для вас
+
+                </span>
+
+
+                <h2
+                    class="mt-5 text-[40px] font-black">
+
+                    Когда нас можно найти?
+
+                </h2>
+
+            </div>
+
+
+
+            <div
+                class="mx-auto mt-12 max-w-[850px] overflow-hidden rounded-[25px] border border-gray-200 bg-white shadow-sm">
+
+
+                <div
+                    class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+
+                    <span class="font-bold">
+                        Понедельник
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 02:00
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+
+                    <span class="font-bold">
+                        Вторник
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 02:00
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+
+                    <span class="font-bold">
+                        Среда
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 02:00
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+
+                    <span class="font-bold">
+                        Четверг
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 02:00
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+
+                    <span class="font-bold">
+                        Пятница
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 03:00
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="flex items-center justify-between border-b border-gray-100 px-7 py-5">
+
+                    <span class="font-bold">
+                        Суббота
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 03:00
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="flex items-center justify-between px-7 py-5">
+
+                    <span class="font-bold">
+                        Воскресенье
+                    </span>
+
+                    <span class="text-sm text-gray-500">
+                        10:00 — 02:00
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="mt-12 text-center">
+
+                <p
+                    class="text-[12px] font-black uppercase tracking-wider text-gray-400">
+
+                    Мы в социальных сетях
+
+                </p>
+
+
+                <div
+                    class="mt-5 flex justify-center gap-3">
+
+                    <a
+                        href="#"
+                        class="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 text-[9px] font-bold transition hover:-translate-y-1 hover:border-orange-500 hover:text-orange-500">
+
+                        Instagram
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 text-[9px] font-bold transition hover:-translate-y-1 hover:border-orange-500 hover:text-orange-500">
+
+                        Telegram
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="flex h-12 w-12 items-center justify-center rounded-xl border border-gray-200 text-[9px] font-bold transition hover:-translate-y-1 hover:border-orange-500 hover:text-orange-500">
+
+                        TikTok
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
+
+    <footer
+        class="bg-[#171615] px-5 py-14 text-white">
+
+        <div
+            class="mx-auto flex max-w-[1450px] flex-col justify-between gap-10 md:flex-row">
+
+
+            <div>
+
+                <h2
+                    class="text-[21px] font-black">
+
+                    CRAVE<span class="text-orange-500">
+                        CRAFT
+                    </span>
+
+                </h2>
+
+
+                <p
+                    class="mt-3 max-w-[300px] text-[13px] leading-5 text-gray-500">
+
+                    Fast Food & Grill нового поколения.
+                    Настоящий вкус без компромиссов.
+
+                </p>
+
+            </div>
+
+
+
+            <div>
+
+                <p class="font-bold">
+                    Навигация
+                </p>
+
+
+                <div class="mt-4 space-y-2">
+
+                    <a
+                        href="index.html"
+                        class="block text-[13px] text-gray-500 hover:text-orange-500">
+
+                        Главная
+
+                    </a>
+
+
+                    <a
+                        href="menu.html"
+                        class="block text-[13px] text-gray-500 hover:text-orange-500">
+
+                        Меню
+
+                    </a>
+
+
+                    <a
+                        href="services.html"
+                        class="block text-[13px] text-gray-500 hover:text-orange-500">
+
+                        Сервисы
+
+                    </a>
+
+
+                    <a
+                        href="about.html"
+                        class="block text-[13px] text-gray-500 hover:text-orange-500">
+
+                        О нас
+
+                    </a>
+
+
+                    <a
+                        href="contacts.html"
+                        class="block text-[13px] text-orange-500">
+
+                        Контакты
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <p class="font-bold">
+                    Контакты
+                </p>
+
+
+                <div
+                    class="mt-4 space-y-2 text-[13px] text-gray-500">
+
+                    <p>
+                        📍 Ташкент, Амир Темур 15
+                    </p>
+
+                    <p>
+                        📞 +998 71 555 35 37
+                    </p>
+
+                    <p>
+                        ✉ hello@cravecraft.uz
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="mx-auto mt-10 max-w-[1450px] border-t border-white/10 pt-5 text-center text-[11px] text-gray-600">
+
+            © 2026 CRAVECRAFT. Все права защищены.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================================================= -->
+    <!-- LOGIN MODAL -->
+    <!-- ================================================= -->
+
+    <div
+        id="loginModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/75 p-4">
+
+        <div
+            class="modal relative w-full max-w-[420px] rounded-[25px] bg-white px-7 py-7 shadow-2xl">
+
+
+            <button
+                onclick="closeModal('loginModal')"
+                class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#f1f2f4] text-[22px] font-light text-[#151923] transition hover:bg-gray-200">
+
+                ×
+
+            </button>
+
+
+            <div class="flex justify-center">
+
+                <div
+                    class="flex h-[58px] w-[58px] items-center justify-center rounded-[16px] bg-[#ff6900] text-[28px]">
+
+                    👤
+
+                </div>
+
+            </div>
+
+
+            <div class="mt-5 text-center">
+
+                <h2
+                    class="text-[27px] font-black tracking-[-1px] text-[#151923]">
+
+                    Войти в CRAVECRAFT
+
+                </h2>
+
+
+                <p
+                    class="mt-1 text-[13px] text-[#7b8498]">
+
+                    Войди, чтобы сохранять свои заказы
+
+                </p>
+
+            </div>
+
+
+            <form
+                onsubmit="login(event)"
+                class="mt-6">
+
+
+                <label class="block">
+
+                    <span
+                        class="text-[13px] font-bold text-[#151923]">
+
+                        Gmail / Email
+
+                    </span>
+
+
+                    <input
+                        required
+                        type="email"
+                        value="khasanovyusuf01@gmail.com"
+                        placeholder="Введите Gmail / Email"
+                        class="mt-2 h-[48px] w-full rounded-[12px] border border-[#dce1ea] bg-[#e8f0ff] px-4 text-[14px] text-[#151923] outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20">
+
+                </label>
+
+
+                <label class="mt-4 block">
+
+                    <span
+                        class="text-[13px] font-bold text-[#151923]">
+
+                        Пароль
+
+                    </span>
+
+
+                    <input
+                        required
+                        type="password"
+                        value="1234567890"
+                        placeholder="Введите пароль"
+                        class="mt-2 h-[48px] w-full rounded-[12px] border border-[#dce1ea] bg-[#e8f0ff] px-4 text-[14px] text-[#151923] outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20">
+
+                </label>
+
+
+                <div class="mt-3 text-right">
+
+                    <button
+                        type="button"
+                        onclick="forgotPassword()"
+                        class="text-[13px] font-bold text-orange-500 transition hover:text-orange-600">
+
+                        Забыли пароль?
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="mt-5 h-[50px] w-full rounded-[12px] bg-[#ff6900] text-[14px] font-black text-white transition hover:bg-[#f45d00] hover:shadow-[0_10px_30px_rgba(255,105,0,.25)]">
+
+                    Войти
+
+                </button>
+
+
+                <div class="my-5 flex items-center gap-3">
+
+                    <div class="h-px flex-1 bg-[#dfe2e8]"></div>
+
+                    <span
+                        class="text-[12px] font-semibold text-[#a0a8b8]">
+
+                        или
+
+                    </span>
+
+                    <div class="h-px flex-1 bg-[#dfe2e8]"></div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    onclick="googleLogin()"
+                    class="flex h-[50px] w-full items-center justify-center gap-3 rounded-[12px] border border-[#dfe2e8] bg-white text-[14px] font-bold text-[#151923] transition hover:bg-gray-50">
+
+                    <span class="text-[20px] font-black">
+                        G
+                    </span>
+
+                    <span>
+                        Продолжить через Google
+                    </span>
+
+                </button>
+
+
+                <p
+                    class="mt-5 text-center text-[11px] leading-4 text-[#9ba5b7]">
+
+                    Продолжая, вы соглашаетесь с условиями
+                    использования CRAVECRAFT.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================================= -->
+
+    <script>
+
+
+        /* ================= MODAL ================= */
+
+        function openModal(id) {
+
+            const modal =
+                document.getElementById(id);
+
+            if (!modal) return;
+
+            modal.classList.remove("hidden");
+
+            modal.classList.add("flex");
+
+            document.body.classList.add("overflow-hidden");
+
+        }
+
+
+        function closeModal(id) {
+
+            const modal =
+                document.getElementById(id);
+
+            if (!modal) return;
+
+            modal.classList.add("hidden");
+
+            modal.classList.remove("flex");
+
+            document.body.classList.remove("overflow-hidden");
+
+        }
+
+
+
+        /* ================= LOGIN ================= */
+
+        function login(event) {
+
+            event.preventDefault();
+
+            alert("Вы успешно вошли в аккаунт!");
+
+            closeModal("loginModal");
+
+        }
+
+
+        function forgotPassword() {
+
+            alert(
+                "Ссылка для восстановления пароля будет отправлена на вашу почту."
+            );
+
+        }
+
+
+        function googleLogin() {
+
+            alert(
+                "Авторизация через Google будет доступна после подключения Google OAuth."
+            );
+
+        }
+
+
+
+        /* ================= CONTACT FORM ================= */
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Спасибо! Ваше сообщение успешно отправлено."
+            );
+
+            event.target.reset();
+
+        }
+
+
+
+        /* ================= MAP ================= */
+
+        function showMap() {
+
+            alert(
+                "CRAVECRAFT находится по адресу: г. Ташкент, ул. Амир Темур, 15."
+            );
+
+        }
+
+
+
+        /* ================= DYNAMIC TITLE ================= */
+
+        const contactTitles = [
+
+            {
+                html: `
+                    Мы всегда
+
+                    <span class="text-orange-500">
+                        на связи
+                    </span>
+                `,
+                font: "Arial Black, Arial, sans-serif"
+            },
+
+
+            {
+                html: `
+                    Есть вопрос?
+
+                    <br>
+
+                    <span class="text-orange-500">
+                        Мы рядом.
+                    </span>
+                `,
+                font: "Georgia, serif"
+            },
+
+
+            {
+                html: `
+                    CRAVECRAFT
+
+                    <br>
+
+                    <span class="text-orange-500">
+                        всегда на связи.
+                    </span>
+                `,
+                font: "Trebuchet MS, sans-serif"
+            },
+
+
+            {
+                html: `
+                    <span class="text-orange-500">
+                        ALWAYS
+                    </span>
+
+                    <br>
+
+                    CONNECTED.
+                `,
+                font: "Impact, sans-serif"
+            },
+
+
+            {
+                html: `
+                    НАПИШИ НАМ.
+
+                    <br>
+
+                    <span class="text-orange-500">
+                        МЫ ОТВЕТИМ.
+                    </span>
+                `,
+                font: "Courier New, monospace"
+            }
+
+        ];
+
+
+        let contactTitleIndex = 0;
+
+        let contactTitleBusy = false;
+
+
+
+        function calculateContactTitleHeight() {
+
+            const element =
+                document.getElementById("contactTitle");
+
+            const wrapper =
+                document.getElementById("contactTitleWrapper");
+
+            if (!element || !wrapper) return;
+
+
+            const oldHTML =
+                element.innerHTML;
+
+            const oldFont =
+                element.style.fontFamily;
+
+
+            let maxHeight = 0;
+
+
+            contactTitles.forEach(function(item) {
+
+                element.innerHTML =
+                    item.html;
+
+                element.style.fontFamily =
+                    item.font;
+
+
+                maxHeight = Math.max(
+                    maxHeight,
+                    element.scrollHeight
+                );
+
+            });
+
+
+            element.innerHTML =
+                oldHTML;
+
+            element.style.fontFamily =
+                oldFont;
+
+
+            wrapper.style.height =
+                (maxHeight + 12) + "px";
+
+        }
+
+
+
+        function changeContactTitle() {
+
+            if (contactTitleBusy) return;
+
+
+            const element =
+                document.getElementById("contactTitle");
+
+
+            if (!element) return;
+
+
+            contactTitleBusy = true;
+
+
+            /* СТАРЫЙ ТЕКСТ ВВЕРХ */
+
+            element.style.transform =
+                "translateY(-110%)";
+
+            element.style.opacity =
+                "0";
+
+
+            setTimeout(function() {
+
+
+                contactTitleIndex++;
+
+
+                if (
+                    contactTitleIndex >=
+                    contactTitles.length
+                ) {
+
+                    contactTitleIndex = 0;
+
+                }
+
+
+                const next =
+                    contactTitles[contactTitleIndex];
+
+
+                /* НОВЫЙ ТЕКСТ */
+
+                element.innerHTML =
+                    next.html;
+
+
+                element.style.fontFamily =
+                    next.font;
+
+
+                /* НОВЫЙ ТЕКСТ СНИЗУ */
+
+                element.style.transition =
+                    "none";
+
+                element.style.transform =
+                    "translateY(110%)";
+
+                element.style.opacity =
+                    "0";
+
+
+                element.offsetHeight;
+
+
+                /* ПОЯВЛЕНИЕ */
+
+                element.style.transition =
+                    "transform .55s ease, opacity .55s ease";
+
+                element.style.transform =
+                    "translateY(0)";
+
+                element.style.opacity =
+                    "1";
+
+
+                setTimeout(function() {
+
+                    contactTitleBusy = false;
+
+                }, 600);
+
+
+            }, 550);
+
+        }
+
+
+
+        /* ================= INIT ================= */
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                const element =
+                    document.getElementById("contactTitle");
+
+
+                if (element) {
+
+                    element.style.fontFamily =
+                        contactTitles[0].font;
+
+                }
+
+
+                calculateContactTitleHeight();
+
+            }
+        );
+
+
+
+        /* ================= RESIZE ================= */
+
+        let resizeTimer;
+
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                clearTimeout(resizeTimer);
+
+
+                resizeTimer = setTimeout(
+                    function() {
+
+                        calculateContactTitleHeight();
+
+                    },
+                    150
+                );
+
+            }
+        );
+
+
+
+        /* ================= CLICK OUTSIDE ================= */
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                const modal =
+                    document.getElementById("loginModal");
+
+
+                if (
+                    modal &&
+                    event.target === modal
+                ) {
+
+                    closeModal("loginModal");
+
+                }
+
+            }
+        );
+
+
+
+        /* ================= ESC ================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+
+                    closeModal("loginModal");
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

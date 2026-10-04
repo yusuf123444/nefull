@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRAVECRAFT — Сервисы</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .dynamic-text {
+            cursor: pointer;
+            transition:
+                transform 0.55s ease,
+                opacity 0.55s ease;
+            will-change: transform, opacity;
+        }
+
+        .dynamic-text:hover {
+            opacity: 0.85;
+        }
+
+        .dynamic-wrapper {
+            overflow: hidden;
+        }
+
+    </style>
+
+</head>
+
+
+<body class="bg-[#f5f5f5] text-black">
+
+
+    <!-- NAVBAR -->
+
+    <header class="sticky top-0 z-50 h-[80px] border-b border-black/10 bg-white/95 backdrop-blur-xl">
+
+        <div class="mx-auto flex h-full max-w-[1450px] items-center justify-between px-8">
+
+            <a href="index.html"
+                class="text-[23px] font-black tracking-tight">
+
+                CRAVE<span class="text-orange-500">CRAFT</span>
+
+            </a>
+
+
+            <nav class="hidden items-center gap-8 md:flex">
+
+                <a href="index.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    Главная
+
+                </a>
+
+                <a href="menu.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    Меню
+
+                </a>
+
+                <a href="services.html"
+                    class="font-bold text-orange-500">
+
+                    Сервисы
+
+                </a>
+
+                <a href="about.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    О нас
+
+                </a>
+
+                <a href="contacts.html"
+                    class="font-semibold transition hover:text-orange-500">
+
+                    Контакты
+
+                </a>
+
+            </nav>
+
+
+            <button
+                onclick="openModal('loginModal')"
+                class="rounded-xl bg-orange-500 px-6 py-3 text-sm font-black text-white transition hover:bg-orange-600 hover:scale-105">
+
+                Войти
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="min-h-[100vh] px-[8%] flex items-center">
+
+        <div>
+
+            <p class="inline-block bg-orange-100 text-orange-600 px-[18px] py-[9px] rounded-full font-bold text-[14px] mb-[25px]">
+
+                НАШИ СЕРВИСЫ
+
+            </p>
+
+
+            <!-- DYNAMIC HERO TITLE -->
+
+            <div
+                class="dynamic-wrapper max-w-[850px]"
+                onclick="changeDynamicText('serviceHeroTitle')">
+
+                <h1
+                    id="serviceHeroTitle"
+                    class="dynamic-text text-[65px] leading-[1.05] font-black tracking-[-3px]">
+
+                    Мы делаем
+                    <span class="text-orange-500">
+                        больше,
+                    </span>
+                    чем просто еду.
+
+                </h1>
+
+            </div>
+
+
+            <p class="text-[19px] text-gray-500 max-w-[650px] leading-[1.7] mt-[25px]">
+
+                CRAVECRAFT создан для того, чтобы каждый заказ
+                был быстрым, удобным и приятным.
+
+            </p>
+
+
+            <div class="flex gap-[20px] mt-[35px]">
+
+                <a href="menu.html"
+                    class="bg-orange-500 text-white px-[30px] py-[15px] rounded-full font-bold hover:bg-orange-600 transition duration-300">
+
+                    Открыть меню
+
+                </a>
+
+
+                <a href="contacts.html"
+                    class="bg-black text-white px-[30px] py-[15px] rounded-full font-bold hover:bg-gray-800 transition duration-300">
+
+                    Связаться с нами
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="min-h-[100vh] bg-white px-[8%] py-[100px]">
+
+        <div class="text-center">
+
+            <p class="text-orange-500 font-bold text-[14px]">
+
+                ЧТО МЫ ПРЕДЛАГАЕМ
+
+            </p>
+
+
+            <h2 class="text-[50px] font-black mt-[10px]">
+
+                Наши сервисы
+
+            </h2>
+
+
+            <p class="text-gray-500 text-[17px] mt-[18px]">
+
+                Всё необходимое для комфортного заказа.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-3 gap-[25px] mt-[65px]">
+
+
+            <!-- SERVICE 1 -->
+
+            <div class="bg-[#f5f5f5] rounded-[25px] p-[35px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                hover:-translate-y-[5px] transition duration-300">
+
+                <div class="w-[65px] h-[65px] rounded-[18px]
+                    bg-orange-500 flex items-center justify-center text-[30px]">
+
+                    🚀
+
+                </div>
+
+
+                <h3 class="text-[25px] font-black mt-[25px]">
+
+                    Быстрая доставка
+
+                </h3>
+
+
+                <p class="text-gray-500 leading-[1.7] mt-[15px]">
+
+                    Получай горячую еду прямо к двери.
+                    Мы стараемся доставлять заказы
+                    максимально быстро.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('deliveryModal')"
+                    class="text-orange-500 font-bold mt-[22px]">
+
+                    Подробнее →
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE 2 -->
+
+            <div class="bg-[#f5f5f5] rounded-[25px] p-[35px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                hover:-translate-y-[5px] transition duration-300">
+
+                <div class="w-[65px] h-[65px] rounded-[18px]
+                    bg-orange-500 flex items-center justify-center text-[30px]">
+
+                    🍔
+
+                </div>
+
+
+                <h3 class="text-[25px] font-black mt-[25px]">
+
+                    Самовывоз
+
+                </h3>
+
+
+                <p class="text-gray-500 leading-[1.7] mt-[15px]">
+
+                    Сделай заказ заранее и забери его
+                    самостоятельно без долгого ожидания.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('pickupModal')"
+                    class="text-orange-500 font-bold mt-[22px]">
+
+                    Подробнее →
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE 3 -->
+
+            <div class="bg-[#f5f5f5] rounded-[25px] p-[35px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                hover:-translate-y-[5px] transition duration-300">
+
+                <div class="w-[65px] h-[65px] rounded-[18px]
+                    bg-orange-500 flex items-center justify-center text-[30px]">
+
+                    ⭐
+
+                </div>
+
+
+                <h3 class="text-[25px] font-black mt-[25px]">
+
+                    Бонусная система
+
+                </h3>
+
+
+                <p class="text-gray-500 leading-[1.7] mt-[15px]">
+
+                    Получай бонусы за заказы и используй
+                    их для будущих покупок.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('bonusModal')"
+                    class="text-orange-500 font-bold mt-[22px]">
+
+                    Подробнее →
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE 4 -->
+
+            <div class="bg-[#f5f5f5] rounded-[25px] p-[35px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                hover:-translate-y-[5px] transition duration-300">
+
+                <div class="w-[65px] h-[65px] rounded-[18px]
+                    bg-orange-500 flex items-center justify-center text-[30px]">
+
+                    📦
+
+                </div>
+
+
+                <h3 class="text-[25px] font-black mt-[25px]">
+
+                    Большие заказы
+
+                </h3>
+
+
+                <p class="text-gray-500 leading-[1.7] mt-[15px]">
+
+                    Заказывай еду для праздников,
+                    компаний и больших мероприятий.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('bigOrderModal')"
+                    class="text-orange-500 font-bold mt-[22px]">
+
+                    Подробнее →
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE 5 -->
+
+            <div class="bg-[#f5f5f5] rounded-[25px] p-[35px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                hover:-translate-y-[5px] transition duration-300">
+
+                <div class="w-[65px] h-[65px] rounded-[18px]
+                    bg-orange-500 flex items-center justify-center text-[30px]">
+
+                    💳
+
+                </div>
+
+
+                <h3 class="text-[25px] font-black mt-[25px]">
+
+                    Удобная оплата
+
+                </h3>
+
+
+                <p class="text-gray-500 leading-[1.7] mt-[15px]">
+
+                    Выбирай подходящий способ оплаты
+                    при оформлении заказа.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('paymentModal')"
+                    class="text-orange-500 font-bold mt-[22px]">
+
+                    Подробнее →
+
+                </button>
+
+            </div>
+
+
+            <!-- SERVICE 6 -->
+
+            <div class="bg-[#f5f5f5] rounded-[25px] p-[35px]
+                shadow-[0_10px_40px_rgba(0,0,0,0.08)]
+                hover:-translate-y-[5px] transition duration-300">
+
+                <div class="w-[65px] h-[65px] rounded-[18px]
+                    bg-orange-500 flex items-center justify-center text-[30px]">
+
+                    🎧
+
+                </div>
+
+
+                <h3 class="text-[25px] font-black mt-[25px]">
+
+                    Поддержка
+
+                </h3>
+
+
+                <p class="text-gray-500 leading-[1.7] mt-[15px]">
+
+                    Возник вопрос? Свяжись с нашей
+                    поддержкой и мы поможем.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('supportModal')"
+                    class="text-orange-500 font-bold mt-[22px]">
+
+                    Подробнее →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DELIVERY -->
+
+    <section class="min-h-[100vh] bg-[#171717] text-white px-[8%] py-[100px] flex items-center">
+
+        <div class="grid grid-cols-2 gap-[80px] items-center w-full">
+
+            <div>
+
+                <p class="text-orange-500 font-bold">
+
+                    ДОСТАВКА
+
+                </p>
+
+
+                <!-- DYNAMIC DELIVERY TITLE -->
+
+                <div
+                    class="dynamic-wrapper"
+                    onclick="changeDynamicText('deliveryTitle')">
+
+                    <h2
+                        id="deliveryTitle"
+                        class="dynamic-text text-[52px] leading-[1.1] font-black mt-[15px]">
+
+                        Любимая еда.
+                        <br>
+                        Прямо к тебе.
+
+                    </h2>
+
+                </div>
+
+
+                <p class="text-gray-400 text-[18px] leading-[1.7] mt-[25px] max-w-[550px]">
+
+                    Выбери блюдо в меню, оформи заказ,
+                    укажи адрес — остальное оставь нам.
+
+                </p>
+
+
+                <button
+                    onclick="openModal('deliveryModal')"
+                    class="mt-[35px] bg-orange-500 px-[30px] py-[15px]
+                    rounded-full font-bold hover:bg-orange-600 transition duration-300">
+
+                    Как это работает
+
+                </button>
+
+            </div>
+
+
+            <div class="bg-[#242424] rounded-[30px] p-[35px]
+                shadow-[0_10px_50px_rgba(0,0,0,0.3)]">
+
+                <h3 class="text-[25px] font-black">
+
+                    Статус заказа
+
+                </h3>
+
+
+                <div class="mt-[30px] space-y-[25px]">
+
+                    <div class="flex justify-between">
+
+                        <span class="text-gray-400">
+                            Заказ принят
+                        </span>
+
+                        <span class="text-orange-500">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex justify-between">
+
+                        <span class="text-gray-400">
+                            Приготовление
+                        </span>
+
+                        <span class="text-orange-500">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex justify-between">
+
+                        <span class="text-gray-400">
+                            Курьер в пути
+                        </span>
+
+                        <span class="text-orange-500">
+                            ✓
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex justify-between">
+
+                        <span class="text-gray-400">
+                            Прибытие
+                        </span>
+
+                        <span class="text-white font-bold">
+                            ~30 мин
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="bg-white px-[8%] py-[60px]">
+
+        <div class="flex justify-evenly">
+
+            <div>
+
+                <h2 class="text-[25px] font-black">
+
+                    CRAVE<span class="text-orange-500">CRAFT</span>
+
+                </h2>
+
+
+                <p class="text-gray-500 mt-[12px]">
+
+                    Настоящий вкус сочной еды.
+
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="font-black mb-[15px]">
+
+                    Навигация
+
+                </h3>
+
+
+                <div class="flex flex-col gap-[10px] text-gray-500">
+
+                    <a href="index.html">
+                        Главная
+                    </a>
+
+                    <a href="menu.html">
+                        Меню
+                    </a>
+
+                    <a href="services.html">
+                        Сервисы
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="font-black mb-[15px]">
+
+                    Информация
+
+                </h3>
+
+
+                <div class="flex flex-col gap-[10px] text-gray-500">
+
+                    <a href="about.html">
+                        О нас
+                    </a>
+
+                    <a href="contacts.html">
+                        Контакты
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="border-t border-gray-200 mt-[50px] pt-[25px] text-center text-gray-400">
+
+            © 2026 CRAVECRAFT. Все права защищены.
+
+        </div>
+
+    </footer>
+
+
+    <!-- DELIVERY MODAL -->
+
+    <div id="deliveryModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px] shadow-[0_20px_70px_rgba(0,0,0,0.3)]">
+
+            <div class="flex justify-between items-center">
+
+                <h2 class="text-[28px] font-black">
+
+                    🚀 Быстрая доставка
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('deliveryModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 leading-[1.7] mt-[20px]">
+
+                После оформления заказа мы начинаем
+                готовить его сразу. Затем курьер забирает
+                заказ и доставляет его по указанному адресу.
+
+            </p>
+
+
+            <button
+                onclick="closeModal('deliveryModal')"
+                class="w-full bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Понятно
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PICKUP MODAL -->
+
+    <div id="pickupModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    🍔 Самовывоз
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('pickupModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 leading-[1.7] mt-[20px]">
+
+                Сделай заказ заранее и забери его
+                самостоятельно в удобное время.
+
+            </p>
+
+
+            <a href="menu.html"
+                class="block text-center bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Перейти в меню
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- BONUS MODAL -->
+
+    <div id="bonusModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    ⭐ Бонусная система
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('bonusModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 leading-[1.7] mt-[20px]">
+
+                Получай бонусы за свои заказы и используй
+                их при следующих покупках.
+
+            </p>
+
+
+            <button
+                onclick="closeModal('bonusModal')"
+                class="w-full bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Понятно
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- BIG ORDER MODAL -->
+
+    <div id="bigOrderModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    📦 Большие заказы
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('bigOrderModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 leading-[1.7] mt-[20px]">
+
+                Организуем большие заказы для праздников,
+                компаний и различных мероприятий.
+
+            </p>
+
+
+            <a href="contacts.html"
+                class="block text-center bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Связаться с нами
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT MODAL -->
+
+    <div id="paymentModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    💳 Оплата
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('paymentModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 leading-[1.7] mt-[20px]">
+
+                При оформлении заказа ты сможешь
+                выбрать удобный способ оплаты.
+
+            </p>
+
+
+            <button
+                onclick="closeModal('paymentModal')"
+                class="w-full bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Понятно
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPPORT MODAL -->
+
+    <div id="supportModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    🎧 Поддержка
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('supportModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 leading-[1.7] mt-[20px]">
+
+                Если возникла проблема с заказом,
+                перейди на страницу контактов.
+
+            </p>
+
+
+            <a href="contacts.html"
+                class="block text-center bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Контакты
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH MODAL -->
+
+    <div id="searchModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    Поиск
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('searchModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <input
+                type="text"
+                placeholder="Найти блюдо..."
+                class="w-full border border-gray-300 rounded-[15px]
+                px-[18px] py-[14px] mt-[25px] outline-none">
+
+
+            <a href="menu.html"
+                class="block text-center bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[15px]">
+
+                Открыть меню
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- CART MODAL -->
+
+    <div id="cartModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 p-[20px]">
+
+        <div class="bg-white text-black rounded-[25px] p-[35px] w-full max-w-[500px]">
+
+            <div class="flex justify-between">
+
+                <h2 class="text-[28px] font-black">
+
+                    🛒 Корзина
+
+                </h2>
+
+
+                <button
+                    onclick="closeModal('cartModal')"
+                    class="text-[28px] text-gray-400">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="text-gray-500 mt-[20px]">
+
+                Корзина пока пустая.
+
+            </p>
+
+
+            <a href="menu.html"
+                class="block text-center bg-orange-500 text-white py-[14px]
+                rounded-full font-bold mt-[25px]">
+
+                Открыть меню
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+
+    <div id="loginModal"
+        class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/75 px-5 backdrop-blur-md">
+
+        <div class="relative w-full max-w-[480px] rounded-[30px] bg-white p-8 shadow-2xl md:p-10">
+
+            <button
+                onclick="closeModal('loginModal')"
+                class="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-xl transition hover:bg-gray-200">
+
+                ×
+
+            </button>
+
+
+            <div class="text-center">
+
+                <div class="mx-auto flex h-[65px] w-[65px] items-center justify-center rounded-2xl bg-orange-500 text-3xl">
+
+                    👤
+
+                </div>
+
+
+                <h2 class="mt-6 text-3xl font-black">
+
+                    Войти в CRAVECRAFT
+
+                </h2>
+
+
+                <p class="mt-2 text-sm text-gray-500">
+
+                    Войди, чтобы сохранять свои заказы
+
+                </p>
+
+            </div>
+
+
+            <form class="mt-8">
+
+
+                <label class="text-sm font-bold">
+
+                    Gmail / Email
+
+                </label>
+
+
+                <input
+                    type="email"
+                    placeholder="example@gmail.com"
+                    class="mt-2 h-[55px] w-full rounded-xl border border-gray-200 px-5 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10">
+
+
+                <label class="mt-5 block text-sm font-bold">
+
+                    Пароль
+
+                </label>
+
+
+                <input
+                    type="password"
+                    placeholder="Введите пароль"
+                    class="mt-2 h-[55px] w-full rounded-xl border border-gray-200 px-5 outline-none transition focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10">
+
+
+                <div class="mt-3 text-right">
+
+                    <button
+                        type="button"
+                        class="text-sm font-bold text-orange-500 hover:underline">
+
+                        Забыли пароль?
+
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="mt-6 w-full rounded-xl bg-orange-500 py-4 font-black text-white transition hover:bg-orange-600">
+
+                    Войти
+
+                </button>
+
+
+                <div class="my-6 flex items-center gap-3">
+
+                    <div class="h-px flex-1 bg-gray-200"></div>
+
+                    <span class="text-sm text-gray-400">
+
+                        или
+
+                    </span>
+
+                    <div class="h-px flex-1 bg-gray-200"></div>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="flex w-full items-center justify-center gap-3 rounded-xl border border-gray-200 py-4 font-bold transition hover:bg-gray-50">
+
+                    <span class="text-xl">
+
+                        G
+
+                    </span>
+
+                    Продолжить через Google
+
+                </button>
+
+
+                <p class="mt-6 text-center text-xs leading-5 text-gray-400">
+
+                    Продолжая, вы соглашаетесь
+                    с условиями использования CRAVECRAFT.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JS -->
+
+    <script>
+
+        /* =========================
+           MODALS
+        ========================= */
+
+        function openModal(id) {
+
+            let modal = document.getElementById(id);
+
+            if (!modal) return;
+
+            modal.classList.remove("hidden");
+
+            modal.classList.add("flex");
+
+            document.body.classList.add("overflow-hidden");
+
+        }
+
+
+        function closeModal(id) {
+
+            let modal = document.getElementById(id);
+
+            if (!modal) return;
+
+            modal.classList.add("hidden");
+
+            modal.classList.remove("flex");
+
+            document.body.classList.remove("overflow-hidden");
+
+        }
+
+
+        document.querySelectorAll("[id$='Modal']").forEach(function(modal) {
+
+            modal.addEventListener("click", function(event) {
+
+                if (event.target === modal) {
+
+                    closeModal(modal.id);
+
+                }
+
+            });
+
+        });
+
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "Escape") {
+
+                document.querySelectorAll("[id$='Modal']").forEach(function(modal) {
+
+                    if (!modal.classList.contains("hidden")) {
+
+                        closeModal(modal.id);
+
+                    }
+
+                });
+
+            }
+
+        });
+
+
+        /* =========================
+           DYNAMIC TEXTS
+        ========================= */
+
+        const serviceDynamicTexts = {
+
+            serviceHeroTitle: [
+
+                {
+                    html: `Мы делаем <span class="text-orange-500">больше,</span> чем просто еду.`,
+                    font: `Arial Black, Arial, sans-serif`
+                },
+
+                {
+                    html: `Больше вкуса. <span class="text-orange-500">Больше впечатлений.</span>`,
+                    font: `Georgia, serif`
+                },
+
+                {
+                    html: `Еда, которая <span class="text-orange-500">делает день лучше.</span>`,
+                    font: `Trebuchet MS, sans-serif`
+                },
+
+                {
+                    html: `<span class="text-orange-500">НЕ ПРОСТО ЕДА.</span> НАСТОЯЩИЙ CRAVE.`,
+                    font: `Impact, sans-serif`
+                },
+
+                {
+                    html: `CRAVECRAFT — <span class="text-orange-500">вкус начинается здесь.</span>`,
+                    font: `Courier New, monospace`
+                }
+
+            ],
+
+
+            deliveryTitle: [
+
+                {
+                    html: `Любимая еда.<br>Прямо к тебе.`,
+                    font: `Arial Black, Arial, sans-serif`
+                },
+
+                {
+                    html: `Твой заказ.<br><span class="text-orange-500">Там, где ты.</span>`,
+                    font: `Georgia, serif`
+                },
+
+                {
+                    html: `Горячая еда.<br><span class="text-orange-500">Быстро и удобно.</span>`,
+                    font: `Trebuchet MS, sans-serif`
+                },
+
+                {
+                    html: `<span class="text-orange-500">HOT.</span><br>FRESH. DELIVERED.`,
+                    font: `Impact, sans-serif`
+                },
+
+                {
+                    html: `ЗАКАЗ ПРИНЯТ.<br><span class="text-orange-500">КУРЬЕР УЖЕ В ПУТИ.</span>`,
+                    font: `Courier New, monospace`
+                }
+
+            ]
+
+        };
+
+
+        const serviceDynamicIndex = {
+
+            serviceHeroTitle: 0,
+
+            deliveryTitle: 0
+
+        };
+
+
+        const serviceDynamicBusy = {
+
+            serviceHeroTitle: false,
+
+            deliveryTitle: false
+
+        };
+
+
+        function changeDynamicText(id) {
+
+            if (serviceDynamicBusy[id]) return;
+
+
+            const element = document.getElementById(id);
+
+            if (!element) return;
+
+
+            const texts = serviceDynamicTexts[id];
+
+            if (!texts) return;
+
+
+            serviceDynamicBusy[id] = true;
+
+
+            const nextIndex =
+                (serviceDynamicIndex[id] + 1) % texts.length;
+
+
+            /* Уезжает вверх */
+
+            element.style.transform = "translateY(-110%)";
+
+            element.style.opacity = "0";
+
+
+            setTimeout(function() {
+
+                /* Меняем текст */
+
+                element.innerHTML = texts[nextIndex].html;
+
+                element.style.fontFamily = texts[nextIndex].font;
+
+
+                /* Ставим новый текст снизу */
+
+                element.style.transform = "translateY(110%)";
+
+
+                /* Принудительный reflow */
+
+                void element.offsetHeight;
+
+
+                /* Новый текст поднимается вверх */
+
+                requestAnimationFrame(function() {
+
+                    element.style.transform = "translateY(0)";
+
+                    element.style.opacity = "1";
+
+                });
+
+
+                serviceDynamicIndex[id] = nextIndex;
+
+
+                setTimeout(function() {
+
+                    serviceDynamicBusy[id] = false;
+
+                }, 550);
+
+
+            }, 550);
+
+        }
+
+
+        /* =========================
+           INITIAL FONTS
+        ========================= */
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.getElementById("serviceHeroTitle").style.fontFamily =
+                serviceDynamicTexts.serviceHeroTitle[0].font;
+
+
+            document.getElementById("deliveryTitle").style.fontFamily =
+                serviceDynamicTexts.deliveryTitle[0].font;
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
